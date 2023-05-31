@@ -4,7 +4,9 @@
   "description": "Repositório contendo estudos de Cypress da Escola Talking About Testing",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "npx cypress run"
+    "test": "npx cypress run",
+    "cypress:open": "npx cypress open",
+    "cypress:open:mobile": "npx cypress open --config viewportWidth=410 viewportHeight=860"
   },
   "repository": {
     "type": "git",
