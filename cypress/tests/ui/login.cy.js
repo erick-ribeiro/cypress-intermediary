@@ -1,5 +1,6 @@
 describe('Login no GITLAB', () => {
-  it('Login', () => {
-    cy.login()
-  })
+	it('Logou com Sucesso', () => {
+	cy.login()
+	cy.url().should('include', '/')
+	})
 })

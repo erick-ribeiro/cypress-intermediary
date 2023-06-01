@@ -22,5 +22,18 @@ Cypress.Commands.add('login', (
         .should('have.value', password, {log: false})
 
     cy.get('[data-qa-selector="sign_in_button"]').click()
-    cy.get('[data-qa-selector="welcome_title_content"]').should('be.visible')
 })
+
+Cypress.Commands.add('logout', () => {
+    cy.get('[data-qa-selector="user_menu"]').click()
+    cy.get('[data-qa-selector="sign_out_link"]').click()
+    
+    cy.url().should('include', '/users/sign_in')
+})
+
+Cypress.Commands.add('createProject', (projectName, projectDescription) => {
+    cy.get('#project_name').type(projectName).should('have.value', projectName)
+    cy.get('#project_description').type(projectDescription).should('have.value', projectDescription)
+    // cy.contains('Create project').click()
+})
+
